@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'allauth.socialaccount',
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
