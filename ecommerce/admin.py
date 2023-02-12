@@ -24,7 +24,7 @@ admin.site.register(Product, ProductAdmin)
 class CartAdmin(admin.ModelAdmin):
     fields = [
         'user', 
-        'products', 
+        'products_at_cart', 
         'products_amount', 
         'delivery_amount', 
         'total_amount', 

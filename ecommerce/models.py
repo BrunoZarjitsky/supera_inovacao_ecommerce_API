@@ -5,13 +5,21 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Product(models.Model):
-    name = models.CharField(_("Name"), max_length=124)
-    price = models.FloatField(_("Price"))
-    score = models.IntegerField(_("Score"))
+    name = models.CharField(_("Name"), max_length=124, default="")
+    price = models.FloatField(_("Price"), default=0)
+    score = models.IntegerField(_("Score"), default=0)
     image = models.ImageField(_("Image"), upload_to="media/product_images/")
 
     def __str__(self):
         return self.name
+
+class ProductAtCart(models.Model):
+    cart_id = models.IntegerField()
+    product = models.ForeignKey(Product, related_name='products', on_delete=models.CASCADE)
+    product_name = models.CharField(_("Name"), max_length=124, default="")
+
+    def __str__(self):
+        return f"{self.cart_id} {self.product_name}"
 
 class Cart(models.Model):
     user = models.ForeignKey(
@@ -21,10 +29,10 @@ class Cart(models.Model):
         null = False, 
         blank = False
     )
-    products = models.ManyToManyField(Product, verbose_name=_("Products"))
-    products_amount = models.FloatField(verbose_name = _("Products amount"))
-    delivery_amount = models.FloatField(verbose_name = _("Delivery amount"))
-    total_amount = models.FloatField(verbose_name = _("Total amount"))
+    products_at_cart = models.ManyToManyField(ProductAtCart, related_name='products', verbose_name=_("Products"), blank=True)
+    products_amount = models.FloatField(verbose_name = _("Products amount"), default=0)
+    delivery_amount = models.FloatField(verbose_name = _("Delivery amount"), default=0)
+    total_amount = models.FloatField(verbose_name = _("Total amount"), default=0)
     active = models.BooleanField(_("Is active"), default = True)
 
 class Order(models.Model):

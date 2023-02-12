@@ -13,8 +13,16 @@ from rest_auth.registration.views import RegisterView
 from allauth.account.models import EmailAddress
 from allauth.socialaccount.models import SocialToken, SocialAccount, SocialApp
 from django.contrib.sites.models import Site
+from ecommerce.views import (
+    ProductViewSet,
+    CartViewSet,
+    OrderViewSet,
+)
 
 router = routers.DefaultRouter()
+router.register('cart', CartViewSet, basename='Cart')
+router.register('product', ProductViewSet, basename='Product')
+router.register('order', OrderViewSet, basename='Order')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
