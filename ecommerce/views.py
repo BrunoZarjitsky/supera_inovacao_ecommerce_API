@@ -19,10 +19,20 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 class ProductViewSet(ViewSet):
+    allowed_filters = [
+        'name', 
+        'name_rev', 
+        'price', 
+        'price_rev', 
+        'score', 
+        'score_rev', 
+    ]
     @action(detail=False, methods=['GET'], url_path='list')
     def get_products_list(self, request):
         # default filter is higher score
         filter_by = request.data.get('filter_by', 'score')
+        if filter_by not in self.allowed_filters:
+            filter_by = 'score'
         manager = ProductManager()
         products_list = manager.get_products_list(filter_by)
         serialized_data = [ProductSerializer(product).data for product in products_list]

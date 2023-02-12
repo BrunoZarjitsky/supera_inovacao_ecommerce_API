@@ -1,0 +1,92 @@
+[
+{
+    "model": "ecommerce.product",
+    "pk": 1,
+    "fields": {
+        "name": "Super Mario Odyssey",
+        "price": 197.88,
+        "score": 100,
+        "image": "media/product_images/super-mario-odyssey.png"
+    }
+},
+{
+    "model": "ecommerce.product",
+    "pk": 2,
+    "fields": {
+        "name": "Call Of Duty Infinite Warfare",
+        "price": 49.99,
+        "score": 80,
+        "image": "media/product_images/call-of-duty-infinite-warfare.png"
+    }
+},
+{
+    "model": "ecommerce.product",
+    "pk": 3,
+    "fields": {
+        "name": "The Witcher III Wild Hunt",
+        "price": 119.5,
+        "score": 250,
+        "image": "media/product_images/the-witcher-iii-wild-hunt.png"
+    }
+},
+{
+    "model": "ecommerce.product",
+    "pk": 4,
+    "fields": {
+        "name": "Call Of Duty WWII",
+        "price": 249.99,
+        "score": 205,
+        "image": "media/product_images/call-of-duty-wwii.png"
+    }
+},
+{
+    "model": "ecommerce.product",
+    "pk": 5,
+    "fields": {
+        "name": "Mortal Kombat XL",
+        "price": 69.99,
+        "score": 150,
+        "image": "media/product_images/mortal-kombat-xl.png"
+    }
+},
+{
+    "model": "ecommerce.product",
+    "pk": 6,
+    "fields": {
+        "name": "Shards of Darkness",
+        "price": 71.94,
+        "score": 400,
+        "image": "media/product_images/shards-of-darkness.png"
+    }
+},
+{
+    "model": "ecommerce.product",
+    "pk": 7,
+    "fields": {
+        "name": "Terra Média: Sombras de Mordor",
+        "price": 79.99,
+        "score": 50,
+        "image": "media/product_images/terra-media-sombras-de-mordor.png"
+    }
+},
+{
+    "model": "ecommerce.product",
+    "pk": 8,
+    "fields": {
+        "name": "FIFA 18",
+        "price": 195.39,
+        "score": 325,
+        "image": "media/product_images/fifa-18.png"
+    }
+},
+{
+    "model": "ecommerce.product",
+    "pk": 9,
+    "fields": {
+        "name": "Horizon Zero Dawn",
+        "price": 115.8,
+        "score": 290,
+        "image": "media/product_images/horizon-zero-dawn.png"
+    }
+}
+]
